@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141618" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/runtracker/favicon.svg" type="image/svg+xml" />
+    <title>RunTracker</title>
+    <script>
+      // Aplica tema e cor salvos antes da primeira pintura.
+      try {
+        var p = JSON.parse(localStorage.getItem('runtracker:v1:preferences') || 'null') || {};
+        var r = document.documentElement;
+        if (['light', 'dark', 'auto'].indexOf(p.theme) >= 0) r.dataset.theme = p.theme;
+        if (['teal', 'blue', 'violet', 'orange', 'green'].indexOf(p.accent) >= 0) r.dataset.accent = p.accent;
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="/runtracker/assets/index-CGHfSWuo.js"></script>
+    <link rel="stylesheet" crossorigin href="/runtracker/assets/index-Cm92BmrJ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
