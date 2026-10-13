@@ -1,25 +1,19 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f7f8fa" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#141618" media="(prefers-color-scheme: dark)" />
-    <link rel="icon" href="/runtracker/favicon.svg" type="image/svg+xml" />
-    <title>RunTracker</title>
-    <script>
-      // Aplica tema e cor salvos antes da primeira pintura.
-      try {
-        var p = JSON.parse(localStorage.getItem('runtracker:v1:preferences') || 'null') || {};
-        var r = document.documentElement;
-        if (['light', 'dark', 'auto'].indexOf(p.theme) >= 0) r.dataset.theme = p.theme;
-        if (['teal', 'blue', 'violet', 'orange', 'green'].indexOf(p.accent) >= 0) r.dataset.accent = p.accent;
-      } catch (e) {}
-    </script>
-    <script type="module" crossorigin src="/runtracker/assets/index-CRemNbBp.js"></script>
-    <link rel="stylesheet" crossorigin href="/runtracker/assets/index-DyQmo6Ef.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="referrer" content="no-referrer"><title>RunTracker mudou de endereço</title><link rel="stylesheet" href="privacidade.css"></head>
+<body><main><h1>O RunTracker mudou de endereço</h1>
+<p>Seus treinos e sua conta continuam no RunTracker. Entre novamente no endereço novo.</p>
+<p><a href="https://runtracker-app.portalremoto.fyi/" rel="noreferrer">Abrir o RunTracker</a></p>
+<p id="link-antigo" hidden>Este link de confirmação ou recuperação foi enviado para o endereço antigo. Abra o RunTracker e peça um novo link no mesmo navegador.</p>
+<p id="limpeza" hidden>O navegador não permitiu apagar a sessão salva neste endereço. Você pode apagar os dados deste site nas configurações do navegador.</p>
+<script>
+(() => {
+  if (location.search || location.hash) document.getElementById('link-antigo').hidden = false;
+  let failed = false;
+  try { for (const key of ['runtracker-auth', 'runtracker-auth-code-verifier']) localStorage.removeItem(key); } catch { failed = true; }
+  try { for (const key of ['runtracker:recovery-user', 'runtracker:oauth-pending', 'runtracker:delete-account-return']) sessionStorage.removeItem(key); } catch { failed = true; }
+  document.getElementById('limpeza').hidden = !failed;
+  // Retira parâmetros da barra, sem redirecionar nem levar dados à origem nova.
+  try { history.replaceState(null, '', location.pathname); } catch {}
+})();
+</script></main></body></html>

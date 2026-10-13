@@ -1,9 +1,6 @@
 {
   "app": "runtracker",
-  "release": true,
-  "supabaseUrl": "https://ptmchanbrfpzakocszym.supabase.co",
-  "base": "/runtracker/",
-  "captcha": "turnstile",
-  "captchaSiteKey": "0x4AAAAAAFVn85xCQ1PZdK3k",
-  "builtAt": "2026-10-13T13:24:04.296Z"
+  "release": false,
+  "kind": "transition",
+  "target": "https://runtracker-app.portalremoto.fyi/"
 }
