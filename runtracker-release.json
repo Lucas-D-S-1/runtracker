@@ -2,5 +2,8 @@
   "app": "runtracker",
   "release": true,
   "supabaseUrl": "https://ptmchanbrfpzakocszym.supabase.co",
-  "builtAt": "2026-10-11T18:39:26.846Z"
+  "base": "/runtracker/",
+  "captcha": "turnstile",
+  "captchaSiteKey": "0x4AAAAAAFVn85xCQ1PZdK3k",
+  "builtAt": "2026-10-13T13:24:04.296Z"
 }
